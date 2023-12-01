@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.chytonpide.MoneyTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-12-01T12:06:08" hostname="ganghwiwon-ui-MacBookPro-2.local" time="0.008">
+  <properties/>
+  <testcase name="testMultiple()" classname="com.chytonpide.MoneyTest" time="0.008"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
