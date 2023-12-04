@@ -1,6 +1,8 @@
 package com.chytonpide;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
 
@@ -13,6 +15,10 @@ public class MoneyTest {
   amount 를 private 로 만들기
   Dollar 부작용? ✅
   Money 반올림?
+  equals() ✅
+  hasCode()
+  Equal null
+  Equal Object
    */
 
   @Test
@@ -22,5 +28,11 @@ public class MoneyTest {
     assertEquals(10, product.amount);
     product = five.times(3);
     assertEquals(15, product.amount);
+  }
+
+  @Test
+  public void testEquality() {
+    assertTrue(new Dollar(5).equals(new Dollar(5)));
+    assertFalse(new Dollar(6).equals(new Dollar(5)));
   }
 }
