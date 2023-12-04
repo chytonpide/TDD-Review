@@ -19,6 +19,10 @@ public class MoneyTest {
   hasCode()
   Equal null
   Equal Object
+  5CHF x 2 = 10CHF ✅
+  Dollar/Franc 중복
+  공용 equals
+  공용 times
    */
 
   @Test
@@ -32,5 +36,12 @@ public class MoneyTest {
   public void testEquality() {
     assertTrue(new Dollar(5).equals(new Dollar(5)));
     assertFalse(new Dollar(6).equals(new Dollar(5)));
+  }
+
+  @Test
+  public void testFrancMultiplication() {
+    Franc five = new Franc(5);
+    assertEquals(new Franc(10), five.times(2));
+    assertEquals(new Franc(15), five.times(3));
   }
 }
