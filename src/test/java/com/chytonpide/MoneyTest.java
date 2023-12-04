@@ -8,9 +8,11 @@ public class MoneyTest {
 
   /*
   TODO
-  $5x2 = $10
-  환율계산이 되어야 한다.
-
+  $5 + 10CHF = $10(환율이 2:1일 경우)
+  $5 x 2 = $10 ✅
+  amount 를 private 로 만들기
+  Dollar 부작용?
+  Money 반올림?
    */
 
   @Test
