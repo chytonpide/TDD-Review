@@ -21,8 +21,9 @@ public class MoneyTest {
   Equal Object
   5CHF x 2 = 10CHF ✅
   Dollar/Franc 중복
-  공용 equals
+  공용 equals ✅
   공용 times
+  Franc 와 Dollar 비교하기
    */
 
   @Test
@@ -36,6 +37,8 @@ public class MoneyTest {
   public void testEquality() {
     assertTrue(new Dollar(5).equals(new Dollar(5)));
     assertFalse(new Dollar(6).equals(new Dollar(5)));
+    assertTrue(new Franc(5).equals(new Franc(5)));
+    assertFalse(new Franc(6).equals(new Franc(5)));
   }
 
   @Test
