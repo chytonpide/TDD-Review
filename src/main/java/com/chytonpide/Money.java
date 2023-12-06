@@ -5,14 +5,14 @@ public class Money {
   protected String currency;
 
   static Money dollar(int amount) {
-    return new Dollar(amount, "USD");
+    return new Money(amount, "USD");
   }
 
   static Money franc(int amount) {
-    return new Franc(amount, "CHF");
+    return new Money(amount, "CHF");
   }
 
-  protected Money(int amount, String currency) {
+  private Money(int amount, String currency) {
     this.amount = amount;
     this.currency = currency;
   }
