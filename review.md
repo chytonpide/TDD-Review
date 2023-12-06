@@ -28,7 +28,13 @@
     Dollar 와 Franc 두 클래스를 모두 포함할 수 있는 동일한 구현을 원하기 때문에 currency 를 인스턴스 변수로 만들고 생성자에서 이를 설정하도록 했다.
     그 결과 Dollar 와 Franc 의 currency 가 동일해져서 Money 로 위치를 옮길 수 있게 되었다.
   - Dollar 와 Franc 의 생정자에 currency 파라미터를 추가해서 구현을 동일 하게 만든 뒤(다른 부분들을 팩토리 메서드로 옮김으로써 두 생성자를 일치시켰다.) 마찬가지로 Money 로 위치를 옮겼다.
-
+- 10장. 흥미로운 시간
+  - times 의 구현을 일치시키려고 했지만 마땅한 방법이 없어서 팩토리 메서드를 인라인 시켰다.
+    (두 times()를 일치시키기 위해 그 메서드들이 호출하는 다른 메서드들을 인라인시킨 후 상수를 변수로 바꾸어 주었다.)
+  - times 에서 Money 생성자를 사용하도록 했다. 그 결과 Money 는 abstract 가 아니라 concrete 클래스가 되었다.
+  - Dollar 와 Franc 의 times 의 구현이 동일하게 되었지만 테스트를 통과하지 못했다.
+  - times 의 구현을 테스트가 통과하는 상태로 되돌린 다음 testDifferentClassEquality 를 정의했다. 타입이 달라도 동등할 수 있다.
+  - 테스트가 통과하게 한다음 동일한 times 의 구현을 Money 로 옮겼다.
 
 # Part2: xUnit 예제
 
