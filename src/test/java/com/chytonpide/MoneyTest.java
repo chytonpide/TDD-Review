@@ -11,21 +11,11 @@ public class MoneyTest {
   /*
   TODO
   $5 + 10CHF = $10(환율이 2:1일 경우)
-  $5 x 2 = $10 ✅
-  amount 를 private 로 만들기 ✅
-  Dollar 부작용? ✅
+  $5 + $5 = $10 TODO
   Money 반올림?
-  equals() ✅
   hasCode()
   Equal null
   Equal Object
-  5CHF x 2 = 10CHF ✅
-  Dollar/Franc 중복 ✅
-  공용 equals ✅
-  공용 times ✅
-  Franc 와 Dollar 비교하기 ✅
-  통화? ✅
-  testFrancMultiplication 제거 ✅
    */
 
   @Test
@@ -46,5 +36,14 @@ public class MoneyTest {
   public void testCurrency() {
     assertEquals("USD", Money.dollar(1).currency());
     assertEquals("CHF", Money.franc(1).currency());
+  }
+
+  @Test
+  public void testSimpleAddition() {
+    Money five = Money.dollar(5);
+    Expression sum = five.plus(five);
+    Bank bank = new Bank();
+    Money reduced = bank.reduce(sum, "USD");
+    assertEquals(Money.dollar(10), reduced);
   }
 }
