@@ -10,12 +10,14 @@ public class MoneyTest {
 
   /*
   TODO
-  $5 + 10CHF = $10(환율이 2:1일 경우)
+  $5 + 10CHF = $10(환율이 2:1일 경우) ✅
   $5 + $5 = $10 ✅
   $5 + $5 에서 Money 반환하기
   Bank.reduce(Money) ✅
   Money 에 대한 통화 변환을 수행하는 Reduce ✅
   Reduce(Bank, String) ✅
+  Sum.plus
+  Expression.times
   Money 반올림?
   hasCode()
   Equal null
@@ -86,5 +88,16 @@ public class MoneyTest {
   @Test
   public void testIdentityRate() {
     assertEquals(1, new Bank().rate("USD", "USD"));
+  }
+
+  @Test
+  public void testMixedAddition() {
+    Expression fiveBucks = Money.dollar(5);
+    Expression tenFrancs = Money.franc(10);
+    Bank bank = new Bank();
+    bank.addRate("CHF", "USD", 2);
+    Money result = bank.reduce(fiveBucks.plus(tenFrancs), "USD");
+    assertEquals(Money.dollar(10), result);
+
   }
 }
